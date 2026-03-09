@@ -21,7 +21,7 @@
 | 标准盒模型（content-box） | 默认值/`box-sizing: content-box` | width = content 宽度               | 总宽度 = 100 + 10*2 + 5*2 = 130px             |
 | IE 盒模型（border-box）   | `box-sizing: border-box`         | width = content + padding + border | 总宽度 = 100px（content 自动缩减为 70px）     |
 
-3. 工程化实践：**全局设置** **`box-sizing: border-box`**（`* { box-sizing: border-box; }`），避免布局计算混乱。
+1. 工程化实践：**全局设置** **`box-sizing: border-box`**（`* { box-sizing: border-box; }`），避免布局计算混乱。
 
 **坑点**：`margin` 不属于盒模型的“宽度/高度”计算范围，仅影响元素外部间距。
 
@@ -69,9 +69,9 @@
 | 百分比         | `line-height: 150%` | 最终值 = 父元素字体大小 \* 百分比 | 继承计算后的固定值                       |
 | 长度（px/em）  | `line-height: 24px` | 固定值                            | 继承固定值                               |
 
-2. 垂直居中原理：`line-height = 容器高度` 时，单行文本在容器内垂直居中（文字基线与行高中线对齐）；
+1. 垂直居中原理：`line-height = 容器高度` 时，单行文本在容器内垂直居中（文字基线与行高中线对齐）；
 
-3. 工程化建议：**优先使用无单位数值**（如 1.5），适配不同字体大小的子元素。
+2. 工程化建议：**优先使用无单位数值**（如 1.5），适配不同字体大小的子元素。
 
 **坑点**：多行文本不能用 `line-height` 垂直居中，需用 Flex/Grid/table-cell。
 

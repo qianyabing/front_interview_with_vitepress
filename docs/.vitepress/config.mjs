@@ -12,10 +12,10 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: '前端机试', link: '/huawei/前端开发者备考华为机试指南_deepseek' },
+      { text: '机试', link: '/huawei/前端开发者备考华为机试指南_deepseek' },
       { text: '面试题', link: '/interview/react面试题' },
-      { text: 'javascript', link: '/javascript/async/general' },
-      { text: 'InterviewQuestions', link: '/InterviewQuestions/1前端高频面试题' },
+      { text: 'InterviewQuestions01', link: '/InterviewQuestions01/1前端高频面试题' },
+      { text: 'InterviewQuestions02', link: '/InterviewQuestions02/1-JavaScript面试真题' },
       { text: 'PracticalQuestions', link: '/PracticalQuestions/1前端二叉树机试准备-从基础到高频题型' },
     ],
 
@@ -70,181 +70,50 @@ export default defineConfig({
           ]
         },
       ],
-      '/javascript/': [
+      '/InterviewQuestions01/': [
         {
-          text: 'javascript',
+          text: 'InterviewQuestions01',
           items: [
-            // {
-            //   text: 'async',
-            //   collapsed: false,
-            //   items: [
-            //     { text: 'general', link: '/javascript/async/general' },
-            //     { text: 'promise', link: '/javascript/async/promise' },
-            //     { text: 'timer', link: '/javascript/async/timer' },
-            //   ]
-            // },
-            // {
-            //   text: 'basic',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'grammar', link: '/javascript/basic/grammar' },
-            //     { text: 'history', link: '/javascript/basic/history' },
-            //     { text: 'introduction', link: '/javascript/basic/introduction' },
-            //   ]
-            // },
-            // {
-            //   text: 'bom',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'array', link: '/javascript/bom/array' },
-            //     { text: 'buffer', link: '/javascript/bom/buffer' },
-            //     { text: 'cookie', link: '/javascript/bom/cookie' },
-            //     { text: 'cors', link: '/javascript/bom/cors' },
-            //     { text: 'engine', link: '/javascript/bom/engine' },
-            //     { text: 'file', link: '/javascript/bom/file' },
-            //     { text: 'form', link: '/javascript/bom/form' },
-            //     { text: 'history', link: '/javascript/bom/history' },
-            //     { text: 'indexeddb', link: '/javascript/bom/indexeddb' },
-            //     { text: 'location', link: '/javascript/bom/location' },
-            //     { text: 'navigator', link: '/javascript/bom/navigator' },
-            //     { text: 'same-origin', link: '/javascript/bom/same-origin' },
-            //     { text: 'storage', link: '/javascript/bom/storage' },
-            //     { text: 'webworker', link: '/javascript/bom/webworker' },
-            //     { text: 'window', link: '/javascript/bom/window' },
-            //     { text: 'xmlhttprequest', link: '/javascript/bom/xmlhttprequest' },
-            //   ]
-            // },
-            // {
-            //   text: 'dom',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'attributes', link: '/javascript/dom/attributes' },
-            //     { text: 'css', link: '/javascript/dom/css' },
-            //     { text: 'document', link: '/javascript/dom/document' },
-            //     { text: 'element', link: '/javascript/dom/element' },
-            //     { text: 'general', link: '/javascript/dom/general' },
-            //     { text: 'mutationobserver', link: '/javascript/dom/mutationobserver' },
-            //     { text: 'node', link: '/javascript/dom/node' },
-            //     { text: 'nodelist', link: '/javascript/dom/nodelist' },
-            //     { text: 'parentnode', link: '/javascript/dom/parentnode' },
-            //     { text: 'text', link: '/javascript/dom/text' },
-            //   ]
-            // },
-            // {
-            //   text: 'elements',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'a', link: '/javascript/elements/a' },
-            //     { text: 'button', link: '/javascript/elements/button' },
-            //     { text: 'form', link: '/javascript/elements/form' },
-            //     { text: 'image', link: '/javascript/elements/image' },
-            //     { text: 'input', link: '/javascript/elements/input' },
-            //     { text: 'option', link: '/javascript/elements/option' },
-            //     { text: 'video', link: '/javascript/elements/video' },
-            //   ]
-            // },
-            // {
-            //   text: 'events',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'common', link: '/javascript/events/common' },
-            //     { text: 'drag', link: '/javascript/events/drag' },
-            //     { text: 'event', link: '/javascript/events/event' },
-            //     { text: 'eventtarget', link: '/javascript/events/eventtargets' },
-            //     { text: 'form', link: '/javascript/events/form' },
-            //     { text: 'globaleventhandlers', link: '/javascript/events/globaleventhandlers' },
-            //     { text: 'keyboard', link: '/javascript/events/keyboard' },
-            //     { text: 'model', link: '/javascript/events/model' },
-            //     { text: 'mouse', link: '/javascript/events/mouse' },
-            //     { text: 'progress', link: '/javascript/events/progress' },
-            //     { text: 'touch', link: '/javascript/events/touch' },
-            //   ]
-            // },
-            // {
-            //   text: 'features',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'console', link: '/javascript/features/console' },
-            //     { text: 'conversion', link: '/javascript/features/conversion' },
-            //     { text: 'error', link: '/javascript/features/error' },
-            //     { text: 'style', link: '/javascript/features/style' },
-            //   ]
-            // },
-            // {
-            //   text: 'oop',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'new', link: '/javascript/oop/new' },
-            //     { text: 'object', link: '/javascript/oop/object' },
-            //     { text: 'prototype', link: '/javascript/oop/prototype' },
-            //     { text: 'strict', link: '/javascript/oop/strict' },
-            //     { text: 'this', link: '/javascript/oop/this' },
-            //   ]
-            // },
-            // {
-            //   text: 'operators',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'arithmetic', link: '/javascript/operators/arithmetic' },
-            //     { text: 'bit', link: '/javascript/operators/bit' },
-            //     { text: 'boolean', link: '/javascript/operators/boolean' },
-            //     { text: 'comparison', link: '/javascript/operators/comparison' },
-            //     { text: 'priority', link: '/javascript/operators/priority' },
-            //   ]
-            // },
-            // {
-            //   text: 'stdlib',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'array', link: '/javascript/stdlib/array' },
-            //     { text: 'attributes', link: '/javascript/stdlib/attributes' },
-            //     { text: 'boolean', link: '/javascript/stdlib/boolean' },
-            //     { text: 'date', link: '/javascript/stdlib/date' },
-            //     { text: 'json', link: '/javascript/stdlib/json' },
-            //     { text: 'math', link: '/javascript/stdlib/math' },
-            //     { text: 'number', link: '/javascript/stdlib/number' },
-            //     { text: 'object', link: '/javascript/stdlib/object' },
-            //     { text: 'regexp', link: '/javascript/stdlib/regexp' },
-            //     { text: 'string', link: '/javascript/stdlib/string' },
-            //     { text: 'wrapper', link: '/javascript/stdlib/wrapper' },
-            //   ]
-            // },
-            // {
-            //   text: 'types',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'array', link: '/javascript/types/array' },
-            //     { text: 'function', link: '/javascript/types/function' },
-            //     { text: 'general', link: '/javascript/types/general' },
-            //     { text: 'null-undefined-boolean', link: '/javascript/types/null-undefined-boolean' },
-            //     { text: 'number', link: '/javascript/types/number' },
-            //     { text: 'object', link: '/javascript/types/object' },
-            //     { text: 'string', link: '/javascript/types/string' },
-            //   ]
-            // },
+            { text: '1前端高频面试题', link: '/InterviewQuestions01/1前端高频面试题' },
+            { text: '2javaScript基础与原理', link: '/InterviewQuestions01/2javaScript基础与原理' },
+            { text: '3浏览器与网络', link: '/InterviewQuestions01/3浏览器与网络' },
+            { text: '4CSS与布局', link: '/InterviewQuestions01/4CSS与布局' },
+            { text: '5Vue高频细分面试题集', link: '/InterviewQuestions01/5Vue高频细分面试题集' },
+            { text: '6React高频细分面试题集', link: '/InterviewQuestions01/6React高频细分面试题集' },
+            { text: '7Electron高频细分面试题集', link: '/InterviewQuestions01/7Electron高频细分面试题集' },
+            { text: '8前端工程化', link: '/InterviewQuestions01/8前端工程化' },
+            { text: '9前端性能优化超细分题集', link: '/InterviewQuestions01/9前端性能优化超细分题集' },
+            { text: '10性能优化全面补全', link: '/InterviewQuestions01/10性能优化全面补全' },
+            { text: '11大厂前端面试查漏补缺清单', link: '/InterviewQuestions01/11大厂前端面试查漏补缺清单' },
+            { text: '12面试反问环节万能应对指南', link: '/InterviewQuestions01/12面试反问环节万能应对指南' },
+            { text: '13Nodejs超细分面试题集', link: '/InterviewQuestions01/13Nodejs超细分面试题集' },
+            { text: '14华为WeLink项目', link: '/InterviewQuestions01/14华为WeLink项目' },
+            { text: '15后台项目', link: '/InterviewQuestions01/15后台项目' },
+            { text: 'TypeScript题集', link: '/InterviewQuestions01/TypeScript题集' },
+            { text: '大厂高频100题', link: '/InterviewQuestions01/大厂高频100题' },
+            { text: '前端宝典', link: '/InterviewQuestions01/前端宝典' },
           ]
         },
       ],
-      
-      '/InterviewQuestions/': [
+	  '/InterviewQuestions02/': [
         {
-          text: 'InterviewQuestions',
+          text: 'InterviewQuestions02',
           items: [
-            { text: '1前端高频面试题', link: '/InterviewQuestions/1前端高频面试题' },
-            { text: '2javaScript基础与原理', link: '/InterviewQuestions/2javaScript基础与原理' },
-            { text: '3浏览器与网络', link: '/InterviewQuestions/3浏览器与网络' },
-            { text: '4Css与布局', link: '/InterviewQuestions/4Css与布局' },
-            { text: '5Vue高频细分面试题集', link: '/InterviewQuestions/5Vue高频细分面试题集' },
-            { text: '6React高频细分面试题集', link: '/InterviewQuestions/6React高频细分面试题集' },
-            { text: '7Electron高频细分面试题集', link: '/InterviewQuestions/7Electron高频细分面试题集' },
-            { text: '8前端工程化', link: '/InterviewQuestions/8前端工程化' },
-            { text: '9前端性能优化超细分题集', link: '/InterviewQuestions/9前端性能优化超细分题集' },
-            { text: '10性能优化全面补全', link: '/InterviewQuestions/10性能优化全面补全' },
-            { text: '11大厂前端面试查漏补缺清单', link: '/InterviewQuestions/11大厂前端面试查漏补缺清单' },
-            { text: '12面试反问环节万能应对指南', link: '/InterviewQuestions/12面试反问环节万能应对指南' },
-            { text: '13Nodejs超细分面试题集', link: '/InterviewQuestions/13Nodejs超细分面试题集' },
-            { text: '14华为WeLink项目', link: '/InterviewQuestions/14华为WeLink项目' },
-            { text: '15后台项目', link: '/InterviewQuestions/15后台项目' },
+            { text: '1-JavaScript面试真题', link: '/InterviewQuestions02/1-JavaScript面试真题' },
+            { text: '2-CSS面试真题', link: '/InterviewQuestions02/2-CSS面试真题' },
+            { text: '3-ES6面试真题', link: '/InterviewQuestions02/3-ES6面试真题' },
+            { text: '4-Vue面试真题', link: '/InterviewQuestions02/4-Vue面试真题' },
+            { text: '5-Vue3面试真题', link: '/InterviewQuestions02/5-Vue3面试真题' },
+            { text: '6-React面试真题', link: '/InterviewQuestions02/6-React面试真题' },
+            { text: '7-Nodejs面试真题', link: '/InterviewQuestions02/7-Nodejs面试真题' },
+            { text: '8-小程序面试真题', link: '/InterviewQuestions02/8-小程序面试真题' },
+            { text: '9-HTTP面试真题', link: '/InterviewQuestions02/9-HTTP面试真题' },
+            { text: '10-Typescript面试真题', link: '/InterviewQuestions02/10-Typescript面试真题' },
+            { text: '11-Webpack面试真题', link: '/InterviewQuestions02/11-Webpack面试真题' },
+            { text: '12-Git面试真题', link: '/InterviewQuestions02/12-Git面试真题' },
+            { text: '13-Linux面试真题', link: '/InterviewQuestions02/13-Linux面试真题' },
+            { text: '14-算法面试真题', link: '/InterviewQuestions02/14-算法面试真题' },
+            { text: '15-设计模式面试真题', link: '/InterviewQuestions02/15-设计模式面试真题' },
           ]
         },
       ],
