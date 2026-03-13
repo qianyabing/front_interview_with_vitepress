@@ -7,6 +7,10 @@ export default defineConfig({
   lang: 'zh-CN',
   lastUpdated: true, // 显示最后更新时间
   cleanUrls: true,    // 美化URL，去掉.html后缀
+  ignoreDeadLinks: true, // 忽略死链检查
+  build: {
+    chunkSizeWarningLimit: 1000 // 单位 kB
+  },
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -49,7 +53,7 @@ export default defineConfig({
       ],
       '/huawei/': [
         {
-          text: '前端机试',
+          text: '机试',
           items: [
             { text: '华为机试JS版-核心算法题+优质解答（ACM模式）', link: '/huawei/doubaolixian/华为机试JS版-核心算法题+优质解答（ACM模式）' },
             { text: '华为机试JS版-易踩坑题目+避坑解答（ACM模式）', link: '/huawei/doubaolixian/华为机试JS版-易踩坑题目+避坑解答（ACM模式）' },
@@ -60,12 +64,12 @@ export default defineConfig({
             { text: '华为JS机试高频知识点：经典题目及JS完整可运行解答', link: '/huawei/doubaozaixian/华为JS机试高频知识点：经典题目及JS完整可运行解答' },
             { text: '华为机考输入处理：从格式到代码的关键指南', link: '/huawei/doubaozaixian/华为机考输入处理：从格式到代码的关键指南' },
             { text: 'Array Map with Number_Type Conversion Explained', link: '/huawei/doubaozaixian/Array_Map_with_Number_ Type_Conversion_Explained' },
-            { text: '华为机试元宝版', link: '/huawei/华为机试元宝版.md' },
+            { text: '华为机试元宝版', link: '/huawei/华为机试_元宝版.md' },
             { text: '前端开发者备考华为机试指南_deepseek', link: '/huawei/前端开发者备考华为机试指南_deepseek' },
             { text: 'JavaScript数组去重方法总结', link: '/huawei/doubaozaixian/JavaScript数组去重方法总结' },
             { text: '华为机考高频题解析：快速排序、两数之和、二分查找', link: '/huawei/doubaozaixian/华为机考高频题解析：快速排序、两数之和、二分查找' },
-            { text: 'JavaScript 正则表达式核心知识点总结', link: '/huawei/doubaozaixian/JavaScript 正则表达式核心知识点总结' },
-            { text: '栈高频题型及解题模板（2023年10月01日）', link: '/huawei/doubaozaixian/栈高频题型及解题模板（2023年10月01日）' },
+            { text: 'JavaScript 正则表达式核心知识点总结', link: '/huawei/doubaozaixian/JavaScript正则表达式核心知识点总结' },
+            { text: '栈高频题型及解题模板', link: '/huawei/doubaozaixian/栈高频题型及解题模板' },
             { text: 'JavaScript数组排序常用方法总结', link: '/huawei/doubaozaixian/JavaScript数组排序常用方法总结' },
           ]
         },

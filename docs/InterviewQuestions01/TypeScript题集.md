@@ -462,7 +462,7 @@ type B = IsString<number>; // false
 
 TS 内置的泛型工具类型均基于**映射类型 + 条件类型**实现，以下是核心工具类型的源码级解析：
 
-1. **Partial<T>**：将 T 的所有属性变为可选
+1. `**Partial<T>**`：将 T 的所有属性变为可选
 
 ```TypeScript
 
@@ -475,7 +475,7 @@ interface User { name: string; age: number }
 type PartialUser = Partial<User>; // { name?: string; age?: number }
 ```
 
-1. **Required<T>**：将 T 的所有属性变为必选（反向 Partial）
+1. `**Required<T>**`：将 T 的所有属性变为必选（反向 Partial）
 
 ```TypeScript
 
@@ -485,7 +485,8 @@ type Required<T> = {
 type RequiredUser = Required<PartialUser>; // 恢复为 User
 ```
 
-1. **Readonly<T>**：将 T 的所有属性变为只读
+
+1. `**Readonly<T>**`：将 T 的所有属性变为只读
 
 ```TypeScript
 
@@ -495,7 +496,7 @@ type Readonly<T> = {
 type ReadonlyUser = Readonly<User>; // { readonly name: string; readonly age: number }
 ```
 
-1. **Pick<T, K>**：从 T 中选取指定属性 K 组成新类型
+1. `**Pick<T, K>**`：从 T 中选取指定属性 K 组成新类型
 
 ```TypeScript
 
@@ -504,8 +505,7 @@ type Pick<T, K extends keyof T> = {
 };
 type UserName = Pick<User, 'name'>; // { name: string }
 ```
-
-1. **Omit<T, K>**：从 T 中排除指定属性 K 组成新类型（基于 Pick + Exclude）
+1. `**Omit<T, K>**`：从 T 中排除指定属性 K 组成新类型（基于 Pick + Exclude）
 
 ```TypeScript
 
@@ -516,7 +516,7 @@ type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 type UserWithoutAge = Omit<User, 'age'>; // { name: string }
 ```
 
-1. **Record<K, T>**：创建键为 K、值为 T 的对象类型
+1. `**Record<K, T>**`：创建键为 K、值为 T 的对象类型
 
 ```TypeScript
 
@@ -593,7 +593,7 @@ type CustomUser = PartialReadonly<User>; // { readonly name?: string; readonly a
 
 这三个工具类型用于提取函数/构造函数的返回值、参数类型，是泛型 + 条件类型的经典应用：
 
-1. **ReturnType<T>**：提取函数 T 的返回值类型
+1. `**ReturnType<T>**`：提取函数 T 的返回值类型
 
 ```TypeScript
 
@@ -612,7 +612,7 @@ const multiply = (a: number, b: number) => a * b;
 type MultiplyReturn = ReturnType<typeof multiply>; // number
 ```
 
-1. **Parameters<T>**：提取函数 T 的参数类型（返回元组）
+1. `**Parameters<T>**`：提取函数 T 的参数类型（返回元组）
 
 ```TypeScript
 
@@ -625,7 +625,7 @@ type AddParams = Parameters<typeof add>; // [number, number]
 type [A, B] = AddParams; // A = number, B = number
 ```
 
-1. **ConstructorParameters<T>**：提取构造函数 T 的参数类型
+1. `**ConstructorParameters<T>**`：提取构造函数 T 的参数类型
 
 ```TypeScript
 

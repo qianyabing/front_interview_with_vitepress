@@ -415,11 +415,13 @@ const server = http.createServer((req, res) => {
 });
 
 // 监听端口
+```
 const PORT = 3000;
 server.listen(PORT, () => {
   console.log(`服务器运行在 http://localhost:${PORT}`);
 });
 
+```
 // 监听错误
 server.on('error', (err) => {
   if (err.code === 'EADDRINUSE') {
