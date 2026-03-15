@@ -138,7 +138,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/qianyabing' }
     ],
 
     search: {
@@ -147,6 +147,6 @@ export default defineConfig({
         locales: { zh: { translations: { button: { buttonText: '搜索知识点' } } } }
       }
     },
-    footer: { message: '前端开发复习网站' }
+    footer: { message: '前端知识库' }
   }
 })
