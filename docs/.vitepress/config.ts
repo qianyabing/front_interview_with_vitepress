@@ -89,31 +89,23 @@ export default defineConfig({
     },
     nav: [
       { text: "首页", link: "/" },
-      {
-        text: "指南",
-        link: "/guide/intro",
-        activeMatch: "/01.指南/",
-      },
-      { text: "配置", link: "/reference/config", activeMatch: "/10.配置/" },
-      { text: "开发", link: "/develop/intro", activeMatch: "/15.主题开发/" },
-      {
-        text: "功能页",
-        items: [
-          { text: "归档页", link: "/archives" },
-          { text: "清单页", link: "/articleOverview" },
-          { text: "登录页", link: "/login" },
-          {
-            text: "风险链接提示页",
-            link: "/risk-link?target=https://vp.teek.top",
-          },
-          { text: "分类页", link: "/categories" },
-          { text: "标签页", link: "/tags" },
-        ],
-      },
-      { text: "面试", link: "/interview/facetoface", activeMatch: "/100.面试/" },
-      { text: "HTML&CSS", link: "/css", activeMatch: "/200.html&css/" },
-      { text: "JavaScript", link: "/js", activeMatch: "/300.javascript/" },
-      { text: "TypeScript", link: "/ts", activeMatch: "/400.typescript/" },
+      // {
+      //   text: "功能页",
+      //   items: [
+      //     { text: "归档页", link: "/archives" },
+      //     { text: "清单页", link: "/articleOverview" },
+      //     { text: "登录页", link: "/login" },
+      //     {
+      //       text: "风险链接提示页",
+      //       link: "/risk-link?target=https://vp.teek.top",
+      //     },
+      //     { text: "分类页", link: "/categories" },
+      //     { text: "标签页", link: "/tags" },
+      //   ],
+      // },
+      { text: "HTML&CSS", link: "/css", activeMatch: "html&css/" },
+      { text: "JavaScript", link: "/js", activeMatch: "javascript/" },
+      { text: "TypeScript", link: "/ts", activeMatch: "typescript/" },
       { text: "框架",
         items: [
           { text: "vue", link: "/vue" },
@@ -123,10 +115,10 @@ export default defineConfig({
           { text: "小程序", link: "/小程序" },
         ]
        },
-      { text: "工程化", link: "/package", activeMatch: "/600.工程化/" },
-      { text: "性能", link: "/performance", activeMatch: "/700.性能/" },
-      { text: "安全", link: "/secure", activeMatch: "/800.安全/" },
-      { text: "工具", link: "/tools", activeMatch: "/900.工具/" },
+      { text: "工程化", link: "/package", activeMatch: "工程化/" },
+      { text: "性能", link: "/performance", activeMatch: "性能/" },
+      { text: "安全", link: "/secure", activeMatch: "安全/" },
+      { text: "工具", link: "/tools", activeMatch: "工具/" },
       { text: "资源", 
         items: [
           { text: "路线", link: "/routes" },
@@ -135,7 +127,9 @@ export default defineConfig({
           { text: "项目", link: "/projects" },
         ]
       },
-      { text: "机试", link: "/interview/computer", activeMatch: "/920.机试/" },
+      { text: "面试", link: "/interview/facetoface", activeMatch: "面试/" },
+      { text: "机试", link: "/interview/computer", activeMatch: "机试/" },
+      { text: "PDF", link: "/pdf/manual" },
       { text: "✨ 赞赏", link: "/personal/" },
     ],
     socialLinks: [
@@ -154,7 +148,7 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [llmstxt() as any],
+    plugins: [llmstxt() as any]
   },
   // transformHtml: (code, id, context) => {
   //   if (context.page !== "404.md") return code;
