@@ -11,7 +11,7 @@ const description = [
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   extends: teekConfig,
-  title: "vitepress-theme-teek",
+  title: "Knowledge_Repository",
   description: description,
   cleanUrls: false,
   lastUpdated: true,

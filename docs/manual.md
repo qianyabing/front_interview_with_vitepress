@@ -22,15 +22,6 @@ tags:
     <ClientOnly>
       <PDFViewer
         :src="currentPdf"
-        :theme="{
-          preference: 'system',
-          light: {
-            accent: {
-              primary: '#42b883' // 自定义主题色
-            }
-          }
-        }"
-        :disabledCategories="['annotation', 'print', 'export']"
       />
     </ClientOnly>
   </div>
@@ -40,7 +31,7 @@ tags:
 import { ref } from 'vue'
 import { ElTree } from 'element-plus'
 import 'element-plus/dist/index.css'
-import PDFViewer from './.vitepress/theme/components/PDFViewer.vue';
+import PDFViewer from './.vitepress/theme/components/PDFViewerIframe.vue';
 
 const treeData = ref([
   {
