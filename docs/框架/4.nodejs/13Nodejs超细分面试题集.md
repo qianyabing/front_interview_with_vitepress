@@ -8,9 +8,9 @@ tags:
   - nodejs
 ---
 
-# Node.js 超细分大厂面试题集（核心+进阶+实战）
+# Node.js 
 
-## 第一部分：Node.js 底层原理（大厂必问核心）
+## 第一部分：Node.js 底层原理
 
 ### 一、Node.js 架构与运行机制
 

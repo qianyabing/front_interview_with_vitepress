@@ -16,7 +16,11 @@
     "vitepress-plugin-llms": "1.7.3"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "@embedpdf/vue-pdf-viewer": "^2.14.0",
+    "@vue-pdf-viewer/viewer": "^4.1.0",
     "element-plus": "2.13.6",
+    "epubjs": "^0.3.93",
     "vitepress-theme-teek": "1.5.5",
     "vue": "3.5.16"
   }
