@@ -88,7 +88,7 @@ export default defineConfig({
       next: "下一页",
     },
     nav: [
-      { text: "首页", link: "/" },
+      { text: "💡 首页", link: "/" },
       // {
       //   text: "功能页",
       //   items: [
@@ -103,33 +103,25 @@ export default defineConfig({
       //     { text: "标签页", link: "/tags" },
       //   ],
       // },
-      { text: "HTML&CSS", link: "/css", activeMatch: "html&css/" },
-      { text: "JavaScript", link: "/js", activeMatch: "javascript/" },
-      { text: "TypeScript", link: "/ts", activeMatch: "typescript/" },
-      { text: "框架",
+      {
+        text: "🎨 基础",link: "/css"
+      },
+      {
+        text: "🎉 框架", link: "/vue"
+      },
+      {
+        text: "🛠️ 工程化", link: "/package"
+      },
+      {
+        text: "🔗 资源", link: "/projects"
+      },
+      {
+        text: "👀 PDF&EPUB",
         items: [
-          { text: "vue", link: "/vue" },
-          { text: "react", link: "/react" },
-          { text: "electron", link: "/electron" },
-          { text: "nodejs", link: "/nodejs" },
-          { text: "小程序", link: "/小程序" },
-        ]
-       },
-      { text: "工程化", link: "/package", activeMatch: "工程化/" },
-      { text: "性能", link: "/performance", activeMatch: "性能/" },
-      { text: "安全", link: "/secure", activeMatch: "安全/" },
-      { text: "工具", link: "/tools", activeMatch: "工具/" },
-      { text: "资源", 
-        items: [
-          { text: "路线", link: "/routes" },
-          { text: "教程", link: "/educate" },
-          { text: "面试网站", link: "/sites" },
-          { text: "项目", link: "/projects" },
+          { text: "PDF", link: "/pdfReader" },
+          { text: "EPUB", link: "/epub/" }
         ]
       },
-      { text: "面试", link: "/interview/facetoface", activeMatch: "面试/" },
-      { text: "机试", link: "/interview/computer", activeMatch: "机试/" },
-      { text: "PDF", link: "/pdf/manual" },
       { text: "✨ 赞赏", link: "/personal/" },
     ],
     socialLinks: [
@@ -148,7 +140,7 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [llmstxt() as any]
+    plugins: [llmstxt() as any],
   },
   // transformHtml: (code, id, context) => {
   //   if (context.page !== "404.md") return code;

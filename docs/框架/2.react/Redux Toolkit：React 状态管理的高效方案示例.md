@@ -1,8 +1,6 @@
 # Redux Toolkit：React 状态管理的高效方案示例
 
-你需要我补充 React 中基于 Redux Toolkit 实现全局状态管理的简洁示例，这是面试中考察 React 状态管理的高频考点，Redux Toolkit 是 React 官方推荐的 Redux 简化方案，相比传统 Redux 更简洁、易上手。
-
-### 一、Redux Toolkit 核心优势（面试常问）
+### 一、Redux Toolkit 核心优势
 
 1. 内置 `immer` 库，支持**直接修改状态**（无需手动返回新状态），简化 reducer 编写；
 

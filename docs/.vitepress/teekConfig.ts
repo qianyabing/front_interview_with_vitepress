@@ -53,6 +53,7 @@ export const teekConfig = defineTeekConfig({
   vitePlugins: {
     sidebarOption: {
       initItems: false,
+      collapsed: true, // 设置 collapsed: true 即可打开侧边栏的自动收缩功能
     },
   },
 });
