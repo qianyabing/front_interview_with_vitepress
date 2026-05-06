@@ -11,53 +11,48 @@ outline: false
 aside: false
 ---
 
-<div class="layout">
-  <div class="sidebar" :class="{ 'is-collapse': isCollapse }">
+<div class="pdf-layout">
+  <!-- 顶部菜单栏 -->
+  <div class="top-navbar">
     <el-menu
       :default-active="activeMenu"
-      :collapse="isCollapse"
-      :collapse-transition="false"
-      background-color="#fafbfc"
+      :ellipsis="false"
+      mode="horizontal"
+      background-color="#ffffff"
       text-color="#303133"
       active-text-color="#409EFF"
       @select="handleMenuSelect"
+      class="top-menu"
     >
       <MenuItem
         v-for="item in menuData"
-        :key="item.url"
+        :key="item.label"
         :item="item"
-      ></MenuItem>
+      />
     </el-menu>
-    <div class="collapse-btn" @click="toggleCollapse">
-      <el-icon :size="20">
-        <Fold v-if="!isCollapse" />
-        <Expand v-else />
-      </el-icon>
-    </div>
   </div>
-  <div class="pdf-viewer">
-      <AsyncPDFReader :src="currentPdf" />
+  <div class="pdf-viewer-container">
+    <AsyncPDFReader :src="currentPdf" />
   </div>
 </div>
 
 <script setup>
 import { ref } from 'vue'
-import { ElMenu, ElIcon } from 'element-plus'
+import { ElMenu } from 'element-plus'
 import 'element-plus/dist/index.css'
-import { Fold, Expand } from '@element-plus/icons-vue';
-import MenuItem from './.vitepress/theme/components/MenuItem.vue';
+import MenuItem from './.vitepress/theme/components/MenuItem.vue'
 import { defineClientComponent } from 'vitepress'
 
 const AsyncPDFReader = defineClientComponent(() => {
-  // return import('./.vitepress/theme/components/PDFViewerIframe.vue')
   return import('./.vitepress/theme/components/PDFViewer.vue')
 })
 
+// 菜单数据
 const menuData = ref([
   {
     label: 'pdf资料',
     icon: 'Document',
-    url: '',
+    url: '1.1',
     children: [
       { label: "1.JavaScript-210页", url: "/pdfs/manual/1.JavaScript面试真题-210页.pdf" },
       { label: "2.CSS-127页", url: "/pdfs/manual/2.CSS面试真题-127页.pdf" },
@@ -79,79 +74,100 @@ const menuData = ref([
   {
     label: 'pdf读物',
     icon: 'Document',
-    url: '',
+    url: '1.2',
+    children: [
+      { label: "跨越圈层：让自己不断变好的底层逻辑 (苏星宁)", url: "/pdfs/other/109-跨越圈层：让自己不断变好的底层逻辑 (苏星宁).pdf" },
+    ]
   }
 ])
 
 // 状态变量
-const activeMenu = ref('')
-const isCollapse = ref(false)
+const activeMenu = ref(menuData.value[0].children[0].url)
 const currentPdf = ref(menuData.value[0].children[0].url)
 
 // 菜单点击事件
 const handleMenuSelect = (url) => {
+  if (!url) return
   activeMenu.value = url
   currentPdf.value = url
-}
-
-// 切换折叠状态
-const toggleCollapse = () => {
-  isCollapse.value = !isCollapse.value
 }
 </script>
 
 <style scoped>
-.layout {
-  display: flex;
-  gap: 24px;
-}
-
-.sidebar {
-  position: relative;
-  width: 260px;
-  flex-shrink: 0;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background: #fafbfc;
-  transition: width 0.3s ease;
-  overflow: hidden;
+.pdf-layout {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* 折叠时宽度缩小到 64px（el-menu 默认折叠宽度） */
-.sidebar.is-collapse {
-  width: 64px;
+/* 顶部导航栏容器 */
+.top-navbar {
+  flex-shrink: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
-/* 让 el-menu 占满剩余高度，不显示默认右边框 */
-.el-menu {
-  border-right: none;
-  flex: 1;
-  margin-top: 34px;
+/* 水平菜单强制不换行，支持横滑滚动 */
+.top-menu {
+  display: inline-flex;
+  border-bottom: none;
+  white-space: nowrap;
 }
 
-/* 折叠按钮样式 */
-.collapse-btn {
-  height: 48px;
-  display: flex;
+/* 覆盖 Element Plus 默认样式，让菜单项在一行内展示 */
+.top-menu :deep(.el-menu--horizontal) {
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+
+.top-menu :deep(.el-menu-item),
+.top-menu :deep(.el-sub-menu__title) {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  border-top: 1px solid #e5e7eb;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-.collapse-btn:hover {
-  background-color: #f0f2f5;
+  white-space: nowrap;
 }
 
-/* 右侧 PDF 区域 */
-.pdf-viewer {
+/* 自定义滚动条 */
+.top-navbar::-webkit-scrollbar {
+  height: 4px;
+}
+.top-navbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+.top-navbar::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+/* PDF 阅读区域，占满剩余空间 */
+.pdf-viewer-container {
   flex: 1;
   overflow: auto;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  background: #f5f7fa;
   padding: 16px;
-  min-width: 0; /* 防止内容溢出 */
+  min-height: 0;
+}
+
+/* 移动端优化：阅读区域占满屏幕宽度 */
+@media (max-width: 768px) {
+  .pdf-viewer-container {
+    padding: 8px;
+  }
+}
+
+/* 确保 PDF 阅读器组件占满容器 */
+.pdf-viewer-container :deep(> *) {
+  width: 100%;
+  height: 100%;
+}
+
+.vp-doc li + li {
+  margin-top: 0;
 }
 </style>
