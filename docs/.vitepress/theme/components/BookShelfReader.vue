@@ -5,13 +5,8 @@
     <div class="bookshelf">
       <h3>📚 我的书架</h3>
       <div class="book-list">
-        <div
-          v-for="book in books"
-          :key="book.src"
-          class="book-item"
-          :class="{ active: currentBook?.src === book.src }"
-          @click="switchBook(book)"
-        >
+        <div v-for="book in books" :key="book.src" class="book-item" :class="{ active: currentBook?.src === book.src }"
+          @click="switchBook(book)">
           <div class="book-cover">
             <!-- 如果有封面图片可以显示，没有则显示默认图标 -->
             <span class="book-icon">📖</span>
@@ -24,8 +19,8 @@
     <!-- 阅读器区域 -->
     <div class="reader-area">
       <h4 v-if="currentBook">正在阅读：《{{ currentBook.name }}》</h4>
-        <AsyncEpubReader v-if="currentBook" :src="currentBook.src" :key="currentBook.src" />
-        <div v-else class="no-book">请从书架选择一本书开始阅读</div>
+      <AsyncEpubReader v-if="currentBook" :src="currentBook.src" :key="currentBook.src" />
+      <div v-else class="no-book">请从书架选择一本书开始阅读</div>
     </div>
   </div>
 </template>
@@ -40,10 +35,10 @@ const AsyncEpubReader = defineClientComponent(() => {
 
 // 书籍列表配置（可以硬编码，也可以动态获取）
 const books = ref([
-  { name: 'ccc', src: '/books/ccc.epub' },
-  { name: 'ddd', src: '/books/ddd.epub' },
-  { name: 'eee', src: '/books/eee.epub' },
-  { name: 'rrr', src: '/books/rrr.epub' }
+  { name: '剑来（1-49册）(烽火戏诸侯)', src: '/books/剑来（1-49册）(烽火戏诸侯).epub' },
+  { name: '小岛经济学', src: '/books/小岛经济学.epub' },
+  { name: '精进：从平凡到卓越的七大启示 (【美】史蒂芬·柯维)', src: '/books/096-精进：从平凡到卓越的七大启示 (【美】史蒂芬·柯维).epub' },
+  { name: '拆商：解决你人生99的难题 (笛子)', src: '/books/030-拆商：解决你人生99的难题 (笛子).epub' }
 ])
 
 const currentBook = ref(null)
@@ -87,7 +82,7 @@ onMounted(() => {
   background: white;
   border-radius: 12px;
   padding: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   height: fit-content;
 }
 
@@ -145,11 +140,12 @@ onMounted(() => {
 
 .reader-area {
   flex: 1;
-  min-width: 0; /* 防止溢出 */
+  min-width: 0;
+  /* 防止溢出 */
   background: white;
   border-radius: 12px;
   padding: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .reader-area h4 {
