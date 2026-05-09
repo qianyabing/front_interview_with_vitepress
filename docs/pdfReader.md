@@ -12,6 +12,7 @@ aside: false
 ---
 
 <div class="pdf-layout">
+<client-only>
   <!-- 顶部菜单栏 -->
   <div class="top-navbar">
     <el-menu
@@ -34,6 +35,7 @@ aside: false
   <div class="pdf-viewer-container">
     <AsyncPDFReader :src="currentPdf" />
   </div>
+</client-only>
 </div>
 
 <script setup>

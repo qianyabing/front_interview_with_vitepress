@@ -83,7 +83,6 @@ const loadBook = async () => {
     
     // 2. 等待书籍打开
     await book.opened
-    
     // 3. 获取导航信息
     const navigation = await book.loaded.navigation
     toc.value = navigation.toc

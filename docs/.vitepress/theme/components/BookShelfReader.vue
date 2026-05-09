@@ -18,7 +18,7 @@
 
     <!-- 阅读器区域 -->
     <div class="reader-area">
-      <h4 v-if="currentBook">正在阅读：《{{ currentBook.name }}》</h4>
+      <h4 v-if="currentBook">正在阅读：{{ currentBook.name }}</h4>
       <AsyncEpubReader v-if="currentBook" :src="currentBook.src" :key="currentBook.src" />
       <div v-else class="no-book">请从书架选择一本书开始阅读</div>
     </div>
@@ -38,7 +38,8 @@ const books = ref([
   { name: '剑来（1-49册）(烽火戏诸侯)', src: '/books/剑来（1-49册）(烽火戏诸侯).epub' },
   { name: '小岛经济学', src: '/books/小岛经济学.epub' },
   { name: '精进：从平凡到卓越的七大启示 (【美】史蒂芬·柯维)', src: '/books/096-精进：从平凡到卓越的七大启示 (【美】史蒂芬·柯维).epub' },
-  { name: '拆商：解决你人生99的难题 (笛子)', src: '/books/030-拆商：解决你人生99的难题 (笛子).epub' }
+  { name: '拆商：解决你人生99的难题 (笛子)', src: '/books/030-拆商：解决你人生99的难题 (笛子).epub' },
+  { name: '做最好的自己：做人不要太老实', src: '/books/做最好的自己：做人不要太老实.epub' }
 ])
 
 const currentBook = ref(null)
@@ -83,7 +84,8 @@ onMounted(() => {
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  height: fit-content;
+  height: 800px;
+  overflow-y: scroll;
 }
 
 .bookshelf h3 {
