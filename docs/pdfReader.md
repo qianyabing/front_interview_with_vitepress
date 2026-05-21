@@ -46,7 +46,8 @@ import MenuItem from './.vitepress/theme/components/MenuItem.vue'
 import { defineClientComponent } from 'vitepress'
 
 const AsyncPDFReader = defineClientComponent(() => {
-  return import('./.vitepress/theme/components/PDFViewer.vue')
+  return import('./.vitepress/theme/components/PDFViewerIframe.vue')
+  // return import('./.vitepress/theme/components/PDFViewer.vue')
 })
 
 // 菜单数据
