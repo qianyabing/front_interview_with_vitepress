@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: Frontend
-  text: Knowledge_Repository
-  tagline: ✨基于 VitePress
+  text: Knowledge_Base
+  tagline: ✨基于 VitePress 的 Teek 主题
   actions:
     - theme: brand
       text: 开始
