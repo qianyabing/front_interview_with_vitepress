@@ -1,13 +1,3 @@
----
-title: TypeScript 
-date: 2026-03-29 21:25:02
-permalink: /ts
-categories:
-  - TypeScript
-tags:
-  - TypeScript
----
-
 # TypeScript 题集
 
 ---
