@@ -104,10 +104,10 @@ export default defineConfig({
       //   ],
       // },
       {
-        text: "🎨 基础",link: "/css"
+        text: "🎨 基础",link: "/基础/1.html&css/00CSS与布局"
       },
       {
-        text: "🎉 框架", link: "/vue"
+        text: "🎉 框架", link: "/框架/1.vue/Vue高频细分面试题集"
       },
       {
         text: "🛠️ 工程化", link: "/package"

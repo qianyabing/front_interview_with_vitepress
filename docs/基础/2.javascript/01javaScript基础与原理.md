@@ -1,13 +1,3 @@
----
-title: js 
-date: 2026-03-29 21:25:02
-permalink: /js
-categories:
-  - js
-tags:
-  - js
----
-
 # JavaScript 基础与原理
 
 ## 一、数据类型与类型判断
