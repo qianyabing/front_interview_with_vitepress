@@ -75,6 +75,23 @@ const menuData = ref([
     ]
   },
   {
+    label: 'CSS布局全解',
+    icon: 'Document',
+    url: '1.3',
+    children: [
+      { label: "1Flexbox基础 - Slidev", url: "/pdfs/manual/CSS布局全解/1Flexbox基础 - Slidev.pdf" },
+      { label: "2深入理解 Flexbox - Slidev", url: "/pdfs/manual/CSS布局全解/2深入理解 Flexbox - Slidev.pdf" },
+      { label: "3实战：用 Flexbox 优雅实现三栏式布局 - Slidev", url: "/pdfs/manual/CSS布局全解/3实战：用 Flexbox 优雅实现三栏式布局 - Slidev.pdf" },
+      { label: "4精通 Flexbox：从换行到多行对齐 - Slidev", url: "/pdfs/manual/CSS布局全解/4精通 Flexbox：从换行到多行对齐 - Slidev.pdf" },
+      { label: "5align-self 与 order：给 Flex 子项多一点自由 - Slidev", url: "/pdfs/manual/CSS布局全解/5align-self 与 order：给 Flex 子项多一点自由 - Slidev.pdf" },
+      { label: "6CSS Grid 基础概念与心智模型 - Slidev", url: "/pdfs/manual/CSS布局全解/6CSS Grid 基础概念与心智模型 - Slidev.pdf" },
+      { label: "7深入理解 CSS Grid 布局中的轨道尺寸与 fr 单位 - Slidev", url: "/pdfs/manual/CSS布局全解/7深入理解 CSS Grid 布局中的轨道尺寸与 fr 单位 - Slidev.pdf" },
+      { label: "8深入理解 CSS 网格中的项目定位与跨越 - Slidev", url: "/pdfs/manual/CSS布局全解/8深入理解 CSS 网格中的项目定位与跨越 - Slidev.pdf" },
+      { label: "9掌握 CSS Grid 布局：从间距到对齐的精细化控制 - Slidev", url: "/pdfs/manual/CSS布局全解/9掌握 CSS Grid 布局：从间距到对齐的精细化控制 - Slidev.pdf" },
+      { label: "探秘 CSS Grid：一行代码实现真正的响应式布局 - Slidev", url: "/pdfs/manual/CSS布局全解/探秘 CSS Grid：一行代码实现真正的响应式布局 - Slidev.pdf" },
+    ]
+  },
+  {
     label: 'pdf读物',
     icon: 'Document',
     url: '1.2',
