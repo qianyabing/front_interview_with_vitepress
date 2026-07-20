@@ -104,7 +104,10 @@ export default defineConfig({
       //   ],
       // },
       {
-        text: "👀 最全八股",link: "/最全八股/ES6高频面试题（30题）"
+        text: "👀 八股一",link: "/八股一/ES6高频面试题（30题）"
+      },
+      {
+        text: "👀 八股二",link: "/八股二/华为OD前端面试准备"
       },
       {
         text: "🎨 基础",link: "/基础/1.html&css/00CSS与布局"
