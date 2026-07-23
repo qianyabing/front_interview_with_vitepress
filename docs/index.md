@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /css
+      link: /基础/1.html&css/00CSS与布局
     - theme: alt
       text: 归档
       link: /archives

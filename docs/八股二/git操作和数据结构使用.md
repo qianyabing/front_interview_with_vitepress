@@ -24,35 +24,6 @@
 > 
 > 在**海嵘（小团队）**，流程简化，但我在一次线上紧急修复（PDF报告生成乱码）时，严格按 `hotfix` 流程走：从 `master` 拉分支 -> 修复 -> 合并回 `master` 并打 `v1.2.1` 标签，**同时手动 Cherry-pick 到 `develop`**，确保下次发版不会丢失这个修复。”
 
-### 考点二：浅拷贝 vs 深拷贝（JS 引用类型的核心）
-
-面试官会结合“不可变数据”和“性能”来问，特别是你的 Redux/Vuex 场景。
-
-#### 1. 基础认知（概念区分）
-
-- **浅拷贝（Shallow Copy）**：只复制**第一层引用**。新对象的 `基本类型` 独立，但 `对象类型` 依然指向同一块堆内存。**方法**：`Object.assign({}, obj)`、`{ ...obj }`、`Array.slice()`。
-- **深拷贝（Deep Copy）**：递归复制**所有层级**，新对象和原对象在堆内存中完全独立。**方法**：`JSON.parse(JSON.stringify(obj))`（有缺陷）、`structuredClone()`（原生API）、递归遍历。
-
-#### 2. 进阶原理（三大死穴与终极实现）
-
-- **`JSON` 方法的致命缺陷（面试必问）**：
-  1. 无法处理 `undefined`、`Function`、`Symbol`（会被忽略或变成 `null`）。
-  2. 无法处理循环引用（`obj.self = obj` 会报错 `Converting circular structure to JSON`）。
-  3. 无法处理 `Date`、`RegExp`、`Map`、`Set` 等特殊对象（会被转成空对象或字符串）。
-- **终极实现**（你已经有了 `WeakMap` 版，这里再强化一个 `structuredClone` 现代 API）：
-  
-  > “如果浏览器环境支持（Chrome 98+），`structuredClone(obj)` 是最快的原生深拷贝，天然支持 `Date`、`RegExp`、`Map`、`Set`、`ArrayBuffer`，且支持循环引用！**如果需兼容 IE 或复杂自定义类**，我才会手写递归 + `WeakMap`。”
-
-#### 3. 结合你的简历（Redux / 点云数据处理）
-
-> “在 **WeLink（React + Redux）** 中，Reducer 要求 **必须返回新对象**才能触发更新。我大量使用浅拷贝（`{ ...state, messages: [...state.messages, newMsg] }`），因为这足够快且符合 Redux 规范。**但绝不用 `JSON` 方式深拷贝 Redux State**，因为它会丢掉函数方法（比如 `action` 里的 `Symbol` 类型）。
-> 
-> 在 **IAMP 点云平台**，处理 `Float32Array` 大块二进制数据时，我**刻意避免深拷贝**，因为百万级数组深拷贝会直接导致内存爆炸（卡死）。我采用 **`TypedArray.slice()`（浅拷贝视图）** + **不可变指针** 来管理数据块，用 `transfer` 转移所有权给 Worker 线程，零拷贝传输。”
-
-**重点防坑补充**：
-
-> “如果面试官问我‘如何实现深拷贝的终极版’，我会说：**生产环境优先用 `lodash.cloneDeep`**，它已经处理了 99% 的边缘场景，不要重复造轮子。除非我要做极致性能优化，才会针对 `Float32Array` 写专门的拷贝函数。”
-
 ### 考点三：项目用到了哪些数据结构？怎么用的？（考察工程中算法的落地）
 
 面试官问这个，是想确认你不仅仅会写 `for` 循环，还能根据**业务场景**选择合适的数据结构来优化性能（时间复杂度）。
