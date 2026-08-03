@@ -23,5 +23,11 @@
     "epubjs": "^0.3.93",
     "vitepress-theme-teek": "1.5.5",
     "vue": "3.5.16"
+  },
+  "pnpm": {
+    "supportedArchitectures": {
+      "os": ["linux", "darwin", "win32"],
+      "cpu": ["x64", "arm64"]
+    }
   }
 }
